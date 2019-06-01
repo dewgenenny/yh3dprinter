@@ -7,8 +7,13 @@ G91                     ; relative positioning
 G1 S1 X-225 Y-225 F1800 ; move quickly to X and Y axis endstops and stop there (first pass)
 G1 X5 Y5 F6000          ; go back a few mm
 G1 S1 X-225 Y-225 F360  ; move slowly to X and Y axis endstops once more (second pass)
-G1 S1 Z305 F1800        ; move Z up stopping at the endstop
-G1 S2 Z-10 F100 ; move Z back 10mm
+
+
+G1 S1 Z-250 F300  ; move Z towards the switch until it triggers
+G1 S2 Z5 F100 ; move Z back 5mm
+G1 S1 Z-10 F100 ; move Z slowly towards the switch until it triggers
+G1 S2 Z10 F100 ; move Z back 10mm
+
 
 G90                     ; absolute positioning
 ;G92 Z0                  ; set Z to axis minimum (you may want to adjust this)
