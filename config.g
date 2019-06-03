@@ -40,8 +40,8 @@ M208 X218 Y218 Z235 S0                   ; Set axis maxima
 M574 X1 Y1 S0                            ; Set active low and disabled endstops
 M574 Z0 S2                               ; Set Z-Probe
 ; Z-Probe
-M558 P1 I1 Z1 H5 F120 T6000                 ; Disable Z probe but set dive height, probe speed and travel speed
-M557 X0:200 Y0:215 S40                   ; Define mesh grid
+M558 P1 I1 F500 Z1 H3.5 F300 T6000 A3      ; Disable Z probe but set dive height, probe speed and travel speed
+M557 X0:200 Y0:215 S50                   ; Define mesh grid
 G31 Z2.45 X38                               ; Z-Probe offset
 
 ; Heaters
