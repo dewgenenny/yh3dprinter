@@ -23,12 +23,12 @@ M569 P2 S0                            ; Drive 2 goes forwards
 M569 P3 S0                               ; Drive 3 goes forwards
 M569 P4 S0
 M350 X16 Y16 Z16:16 E16 I1                  ; Configure microstepping with interpolation
-M92 X100 Y100 Z400.00:400.00 E421      ; Set steps per mm
+M92 X100 Y100 Z400.00:400.00 E453      ; Set steps per mm
 
 M566 X900.00 Y900.00 Z12.00:12.00 E120.00      ; Set maximum instantaneous speed changes (mm/min)
-M203 X6000.00 Y6000.00 Z540.00:540.00 E1200.00  ; Set maximum speeds (mm/min)
+M203 X6600.00 Y6600.00 Z540.00:540.00 E1200.00  ; Set maximum speeds (mm/min)
 M201 X500.00 Y500.00 Z20.00:20.00 E250.00      ; Set accelerations (mm/s^2)
-M906 X800.00 Y800.00 Z800.00:800.00 E800.00 I30 ; Set motor currents (mA) and motor idle factor in per cent
+M906 X500.00 Y500.00 Z500.00:500.00 E700.00 I30 ; Set motor currents (mA) and motor idle factor in per cent
 M84 S30                                  ; Set idle timeout
 
 ; Axis Limits
@@ -41,8 +41,8 @@ M574 X1 Y1 S0                            ; Set active low and disabled endstops
 M574 Z0 S2                               ; Set Z-Probe
 ; Z-Probe
 M558 P1 I1 F500 Z1 H3.5 F300 T6000 A3      ; Disable Z probe but set dive height, probe speed and travel speed
-M557 X0:200 Y0:215 S50                   ; Define mesh grid
-G31 Z2.2 X38                               ; Z-Probe offset
+M557 X0:220 Y0:220 S40                   ; Define mesh grid
+G31 Z1.4 X38                               ; Z-Probe offset
 
 ; Heaters
 M307 H0 B0 S1.00                         ; Disable bang-bang mode for the bed heater and set PWM limit
@@ -52,7 +52,7 @@ M305 P1 T100000 B4138 R4700              ; Set thermistor + ADC parameters for h
 M143 H1 S280                             ; Set temperature limit for heater 1 to 280C
 
 ; Fans
-M106 P0 S50 I0 F500 H-1 ; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off
+M106 P0 S50 I0 F100 H-1 ; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off
 ;M106 P0 S0.3 I0 F500 H1 T45              ; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned on
 M106 P1 S1 I0 F500 H1 T45                ; Set fan 1 value, PWM signal inversion and frequency. Thermostatic control is turned on
 
