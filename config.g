@@ -42,7 +42,7 @@ M574 Z0 S2                               ; Set Z-Probe
 ; Z-Probe
 M558 P1 I1 F500 Z1 H3.5 F300 T6000 A3      ; Disable Z probe but set dive height, probe speed and travel speed
 M557 X0:220 Y0:220 S40                   ; Define mesh grid
-G31 Z1.4 X38                               ; Z-Probe offset
+G31 Z1.18 X38                               ; Z-Probe offset
 
 ; Heaters
 M307 H0 B0 S1.00                         ; Disable bang-bang mode for the bed heater and set PWM limit
