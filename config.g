@@ -40,9 +40,9 @@ M208 X218 Y218 Z235 S0                   ; Set axis maxima
 M574 X1 Y1 S0                            ; Set active low and disabled endstops
 M574 Z0 S2                               ; Set Z-Probe
 ; Z-Probe
-M558 P1 I1 F500 Z1 H3.5 F300 T6000 A3      ; Disable Z probe but set dive height, probe speed and travel speed
+M558 P1 I1 F500 Z1 H3.5 F300 T8000 A3      ; Disable Z probe but set dive height, probe speed and travel speed
 M557 X0:220 Y0:220 S40                   ; Define mesh grid
-G31 Z1.18 X38                               ; Z-Probe offset
+G31 Z1.525 X38                               ; Z-Probe offset
 
 ; Heaters
 M307 H0 B0 S1.00                         ; Disable bang-bang mode for the bed heater and set PWM limit
@@ -66,5 +66,8 @@ G10 P0 R0 S0                             ; Set initial tool 0 active and standby
 ; Custom settings are not configured
 M584 X0 Y1 Z2:4 E3                 ; Set Z motors on drives 2 and 4
 M671 X0:309.0 Y137.5:137.5 S4  ; Set the Z motor relative locations
+
+; Pressure Advance
+M572 D0 S0.1
 
 M501
